@@ -28,16 +28,13 @@ print_head "Download app code to tmp"
 curl -L -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue.zip &>>${LOG}
 status_check
 
-
-
 print_head "unzip and copy app code to created app directory"
 cd /app &>>${LOG}
 unzip /tmp/catalogue.zip &>>${LOG}
 status_check
 
-cd /app &>>${LOG}
-
 print_head "download dependencies"
+cd /app &>>${LOG}
 npm install &>>${LOG}
 status_check
 
