@@ -17,8 +17,8 @@ cd /usr/share/nginx/html &>>${LOG}
 unzip /tmp/frontend.zip &>>${LOG}
 status_check
 
-print_head "Copy roboshop nginx config file"
-cd ${script_location}/files/roboshop.conf /etc/nginx/default.d/roboshop.conf &>>${LOG}
+print_head "Copy RoboShop Nginx Config File"
+cp ${script_location}/files/roboshop.conf /etc/nginx/default.d/roboshop.conf &>>${LOG}
 status_check
 
 print_head "start and enable nginx"
