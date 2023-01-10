@@ -2,4 +2,4 @@
 
 script_location=$(pwd)
 
-LOG=/tmp/roboshop/log
+LOG=/tmp/roboshop.log
