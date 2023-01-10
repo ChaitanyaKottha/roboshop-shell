@@ -13,7 +13,7 @@ useradd roboshop &>>${LOG}
 status_check
 
 print_head "Setup app directory"
-mkdir /app &>>${LOG}
+mkdir -p /app &>>${LOG}
 status_check
 
 print_head "Download app code to tmp"
