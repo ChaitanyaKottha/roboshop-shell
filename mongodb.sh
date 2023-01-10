@@ -1,7 +1,7 @@
 source common.sh
 
 print_head "Copying mongodb repo file"
-cp ${script_location}/Files/mongodb.repo /etc/yum.repos.d/mongo.repo &>>${LOG}
+cp ${script_location}/Files/mongodb.repo /etc/yum.repos.d/mongodb.repo &>>${LOG}
 status_check
 
 
