@@ -10,7 +10,7 @@ yum install mongodb-org -y &>>${LOG}
 status_check
 
 print_head "Change 127.0.0.1  to 0.0.0.0 in mongod.conf file"
-sed -i -e 's/127.0.0.1/0.0.0.0' /etc/mongod.conf &>>${LOG}
+sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf &>>${LOG}
 status_check
 
 print_head "Enable mongodb"
