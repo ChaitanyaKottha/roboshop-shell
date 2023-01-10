@@ -1,4 +1,4 @@
-#!/bin/bash   #shebash
+#!/bin/bash
 
 source common.sh
 
