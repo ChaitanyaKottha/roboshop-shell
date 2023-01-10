@@ -53,5 +53,5 @@ labauto mongodb-client &>>${LOG}
 status_check
 
 print_head "Load Schema "
- mongo --host 172.31.10.121 < /app/schema/catalogue.js &>>${LOG}
+ mongo --host mongodb-dev.devops-practice.online < /app/schema/catalogue.js &>>${LOG}
 status_check
