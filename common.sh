@@ -67,7 +67,10 @@ SystemD_Setup(){
 }
 
 Load_Schema(){
-if [true]; then
+if [${schema_load} == "true"]; {
+ if [${schema_type == 'mango'] ;{
+  then
+
   print_head "Copying mongodb repo file"
   cp ${script_location}/Files/mongodb.repo /etc/yum.repos.d/mongodb.repo &>>${LOG}
   status_check
@@ -79,7 +82,8 @@ if [true]; then
   print_head "Load Schema "
    mongo --host mongodb-dev.devops-practice.online < /app/schema/${component}.js &>>${LOG}
   status_check
-if
+  fi}
+fi
 }
 
 nodejs (){

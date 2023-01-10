@@ -1,5 +1,5 @@
 source common.sh
 
 component=user
-Load_Schema=true
+schema_load=true
 nodejs

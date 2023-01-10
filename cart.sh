@@ -1,5 +1,5 @@
 source common.sh
 
 component=cart
-Load_Schema=false
+schema_load=false
 nodejs
