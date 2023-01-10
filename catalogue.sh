@@ -33,7 +33,7 @@ npm install &>>${LOG}
 status_check
 
 print_head "setup systemd catalogue service"
-cd ${script_location}/Files/catalogue.service /etc/systemd/system/catalogue.service &>>${LOG}
+cd ${script_location}/Files/catalogue.services /etc/systemd/system/catalogue.service &>>${LOG}
 status_check
 
 print_head "daemon reload "
