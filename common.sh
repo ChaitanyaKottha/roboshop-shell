@@ -117,7 +117,7 @@ SystemD_Setup
 Load_Schema
 }
 
-MAVEN() {
+maven() {
 
   print_head "Install Maven"
   yum install maven -y &>>${LOG}
