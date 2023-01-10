@@ -32,12 +32,12 @@ App_PreReq(){
   mkdir -p /app &>>${LOG}
   status_check
 
-  print_head "Cleanup Old Content"
-    rm -rf /app/* &>>${LOG}
-    status_check
-
   print_head "Download app code"
-  curl -L -o /tmp/${Component}.zip https://roboshop-artifacts.s3.amazonaws.com/${component}.zip &>>${LOG}
+  curl -L -o /tmp/${component}.zip https://roboshop-artifacts.s3.amazonaws.com/${component}.zip &>>${LOG}
+  status_check
+
+  print_head "Cleanup Old Content"
+  rm -rf /app/* &>>${LOG}
   status_check
 
   print_head "unzip app code"
