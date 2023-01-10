@@ -1,5 +1,10 @@
 source common.sh
 
+if [ -z "${root_mysql_password}" ]; then
+  echo "Variable root_mysql_password is missing"
+  exit 1
+fi
+
 print_head "Disable default mysql 8 version"
 dnf module disable mysql -y &>>${LOG}
 status_check
