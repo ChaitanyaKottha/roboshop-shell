@@ -20,12 +20,12 @@ print_head "Setup app directory"
 mkdir -p /app &>>${LOG}
 status_check
 
-print_head "Download app code to tmp"
-curl -L -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue.zip &>>${LOG}
+print_head "Clean up old content"
+rm -rf /tmp/* &>>${LOG}
 status_check
 
-print_head "Clan up old content"
-rm -rf /tmp/* &>>${LOG}
+print_head "Download app code to tmp"
+curl -L -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue.zip &>>${LOG}
 status_check
 
 cd /app &>>${LOG}
