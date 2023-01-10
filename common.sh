@@ -48,7 +48,7 @@ App_PreReq(){
 
 SystemD_Setup(){
 
-  print_head "setup service file "
+  print_head "setup ${component} service file "
   cp ${script_location}/Files/${component}.service /etc/systemd/system/${component}.service &>>${LOG}
   status_check
 
@@ -56,12 +56,12 @@ SystemD_Setup(){
   systemctl daemon-reload &>>${LOG}
   status_check
 
-  print_head "enable catalogue "
+  print_head "enable ${component} service "
    systemctl enable ${component} &>>${LOG}
   status_check
 
-  print_head "restart catalogue "
-   systemctl start ${component} &>>${LOG}
+  print_head "restart ${component} service "
+   systemctl restart ${component} &>>${LOG}
   status_check
 
 }
