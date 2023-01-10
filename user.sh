@@ -34,6 +34,10 @@ cd /app &>>${LOG}
 npm install &>>${LOG}
 status_check
 
+print_head "setup service file "
+cp ${script_location}/Files/user.service /etc/systemd/system/user.service &>>${LOG}
+status_check
+
 print_head ""
 &>>${LOG}
 status_check
