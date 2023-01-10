@@ -1,6 +1,6 @@
 source common.sh
 
-print_head "Setup Nodejs"
+print_head "Configuring Nodejs repos"
 curl -sL https://rpm.nodesource.com/setup_lts.x | bash &>>${LOG}
 status_check
 
@@ -48,8 +48,13 @@ print_head "restart catalogue "
  systemctl restart catalogue &>>${LOG}
 status_check
 
-print_head "Install mongodb-client "
-labauto mongodb-client &>>${LOG}
+print_head "Copying mongodb repo file"
+cp ${script_location}/Files/mongodb.repo /etc/yum.repos.d/mongodb.repo &>>${LOG}
+status_check
+
+
+print_head "Install mangodb"
+yum install mongodb-org-shell -y &>>${LOG}
 status_check
 
 print_head "Load Schema "
