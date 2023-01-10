@@ -21,9 +21,9 @@ print_head "restart mysql"
 status_check
 
 print_head "Change default root password"
-mysql_secure_installation --set-root-pass RoboShop@1 &>>${LOG}
+mysql_secure_installation --set-root-pass ${root_mysql_password} &>>${LOG}
 status_check
 
 print_head "check if new pwd is working"
-mysql -uroot -pRoboShop@1 &>>${LOG}
+mysql -uroot -p${root_mysql_password} &>>${LOG}
 status_check
