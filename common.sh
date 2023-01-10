@@ -67,11 +67,10 @@ SystemD_Setup(){
 }
 
 Load_Schema(){
-
+if [true]; then
   print_head "Copying mongodb repo file"
   cp ${script_location}/Files/mongodb.repo /etc/yum.repos.d/mongodb.repo &>>${LOG}
   status_check
-
 
   print_head "Install mangodb"
   yum install mongodb-org-shell -y &>>${LOG}
@@ -80,7 +79,7 @@ Load_Schema(){
   print_head "Load Schema "
    mongo --host mongodb-dev.devops-practice.online < /app/schema/${component}.js &>>${LOG}
   status_check
-
+if
 }
 
 nodejs (){
