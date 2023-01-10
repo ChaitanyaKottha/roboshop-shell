@@ -82,6 +82,16 @@ if [${schema_load} == "true"]; then
    mongo --host mongodb-dev.devops-practice.online < /app/schema/${component}.js &>>${LOG}
   status_check
   fi
+  if [ ${schema_type} == "mysql" ]; then
+
+        print_head "Install mysql"
+        yum install mysql -y &>>${LOG}
+        status_check
+
+        print_head "Load Schema "
+         mysql -h mysql-dev.devops-practice.online -uroot -p${root_mysql_password} < /app/schema/${component}.sql
+        status_check
+  fi
 fi
 }
 
