@@ -8,8 +8,12 @@ print_head "Install nodejs"
 yum install nodejs -y &>>${LOG}
 status_check
 
-print_head "Add user roboshop"
-useradd roboshop &>>${LOG}
+print_head "Add application user roboshop"
+id=roboshop &>>${LOG}
+if [ $? -ne 0 ];
+then
+  useradd roboshop &>>${LOG}
+fi
 status_check
 
 print_head "Setup app directory"
@@ -18,6 +22,10 @@ status_check
 
 print_head "Download app code to tmp"
 curl -L -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue.zip &>>${LOG}
+status_check
+
+print_head "Clan up old content"
+rm -rf /tmp/* &>>${LOG}
 status_check
 
 cd /app &>>${LOG}
