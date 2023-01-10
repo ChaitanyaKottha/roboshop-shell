@@ -22,7 +22,7 @@ App_PreReq(){
 
   print_head "add app user roboshop"
   id roboshop &>>${LOG}
-  if [ $? -ne 0];
+  if [ $? -ne 0 ];
   then
     useradd roboshop &>>${LOG}
   fi
@@ -67,8 +67,8 @@ SystemD_Setup(){
 }
 
 Load_Schema(){
-if [${schema_load} == "true"]; then
- if [${schema_type} == "mango"] ; then
+if [ ${schema_load} == "true" ]; then
+ if [ ${schema_type} == "mango" ] ; then
 
   print_head "Copying mongodb repo file"
   cp ${script_location}/Files/mongodb.repo /etc/yum.repos.d/mongodb.repo &>>${LOG}
