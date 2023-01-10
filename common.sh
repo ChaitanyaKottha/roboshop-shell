@@ -123,7 +123,7 @@ maven() {
   yum install maven -y &>>${LOG}
   status_check
 
-  APP_PREREQ
+  App_PreReq
 
   print_head "Build a package"
   mvn clean package  &>>${LOG}
@@ -144,7 +144,7 @@ python(){
     yum install python36 gcc python3-devel -y &>>${LOG}
     status_check
 
-    APP_PREREQ
+    App_PreReq
 
     print_head "Download Dependencies"
     cd /app
@@ -152,8 +152,8 @@ python(){
     status_check
 
     print_head "Update Passwords in Service File"
-    sed -i -e "s/roboshop_rabbitmq_password/${roboshop_rabbitmq_password}/" ${script_location}/files/${component}.service  &>>${LOG}
+    sed -i -e "s/roboshop_rabbitmq_password/${roboshop_rabbitmq_password}/" ${script_location}/Files/${component}.service  &>>${LOG}
     status_check
 
-    SYSTEMD_SETUP
+    SystemD_Setup
 }
