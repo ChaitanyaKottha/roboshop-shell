@@ -1,5 +1,3 @@
-#!/bin/bash
-
 source common.sh
 
 print_head "install nginx"
