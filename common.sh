@@ -57,11 +57,11 @@ SystemD_Setup(){
   status_check
 
   print_head "enable catalogue "
-   systemctl enable catalogue &>>${LOG}
+   systemctl enable ${component} &>>${LOG}
   status_check
 
   print_head "restart catalogue "
-   systemctl start catalogue &>>${LOG}
+   systemctl start ${component} &>>${LOG}
   status_check
 
 }
