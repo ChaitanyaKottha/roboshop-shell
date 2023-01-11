@@ -68,7 +68,7 @@ SystemD_Setup(){
 
 Load_Schema(){
 if [ ${schema_load} == "true" ]; then
- if [ ${schema_type} == "mango" ] ; then
+ if [   ${schema_type} == "mango" ] ; then
 
   print_head "Copying mongodb repo file"
   cp ${script_location}/Files/mongodb.repo /etc/yum.repos.d/mongodb.repo &>>${LOG}
