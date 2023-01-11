@@ -1,6 +1,6 @@
 source common.sh
 
-if [ -z "${root_mysql_password}" ]; then
+if [ -z "${root_mysql_password}" ]; then  ### -z returns true if variable is empty
   echo "Variable root_mysql_password is missing"
   exit 1
 fi
