@@ -28,6 +28,9 @@ status_check
 
 print_head "Change default root password"
 mysql_secure_installation --set-root-pass ${root_mysql_password} &>>${LOG}
+if [ $? -eq 1 ]; then
+  echo "Password is already changed"
+fi
 status_check
 
 #print_head "check if new pwd is working"
